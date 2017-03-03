@@ -1,0 +1,130 @@
+0:000> !Name2EE a8.dll a8.Program.Reader
+Module:      00007ffade9154b8
+Assembly:    a8.dll
+Token:       0000000006000003
+MethodDesc:  00007ffade9164b8
+Name:        a8.Program.Reader()
+JITTED Code Address: 00007ffadea70e80
+
+***********************************************************************************************************************************************************
+
+0:000> !Name2EE a8.dll a8.Program.For
+Module:      00007ffade9154b8
+Assembly:    a8.dll
+Token:       0000000006000002
+MethodDesc:  00007ffade9164a8
+Name:        a8.Program.For()
+JITTED Code Address: 00007ffadea72340
+
+***********************************************************************************************************************************************************
+
+0:000> !U 00007ffade9164b8
+Normal JIT generated code
+a8.Program.Reader()
+Begin 00007ffadea70e80, size ab
+
+D:\temp\a8\Program.cs @ 53:
+00007ffa`dea70e80 57              push    rdi
+00007ffa`dea70e81 4883ec50        sub     rsp,50h
+00007ffa`dea70e85 c5f877          vzeroupper
+00007ffa`dea70e88 488d7c2430      lea     rdi,[rsp+30h]
+00007ffa`dea70e8d b908000000      mov     ecx,8
+00007ffa`dea70e92 33c0            xor     eax,eax
+00007ffa`dea70e94 f3ab            rep stos dword ptr [rdi]
+00007ffa`dea70e96 48b8a8277eaca6010000 mov rax,1A6AC7E27A8h
+00007ffa`dea70ea0 488b00          mov     rax,qword ptr [rax]
+00007ffa`dea70ea3 4885c0          test    rax,rax
+00007ffa`dea70ea6 7473            je      00007ffa`dea70f1b
+00007ffa`dea70ea8 488d4810        lea     rcx,[rax+10h]
+00007ffa`dea70eac 48894c2428      mov     qword ptr [rsp+28h],rcx
+00007ffa`dea70eb1 8b4008          mov     eax,dword ptr [rax+8]
+00007ffa`dea70eb4 488b4c2428      mov     rcx,qword ptr [rsp+28h]
+00007ffa`dea70eb9 488d542430      lea     rdx,[rsp+30h]
+00007ffa`dea70ebe c4e17957c0      vxorpd  xmm0,xmm0,xmm0
+00007ffa`dea70ec3 c4e17a7f02      vmovdqu xmmword ptr [rdx],xmm0
+00007ffa`dea70ec8 c4e17a7f4210    vmovdqu xmmword ptr [rdx+10h],xmm0
+00007ffa`dea70ece 488d542438      lea     rdx,[rsp+38h]
+00007ffa`dea70ed3 48890a          mov     qword ptr [rdx],rcx
+00007ffa`dea70ed6 894208          mov     dword ptr [rdx+8],eax
+
+D:\temp\a8\Program.cs @ 57:
+00007ffa`dea70ed9 8b442448        mov     eax,dword ptr [rsp+48h]
+00007ffa`dea70edd 3b442440        cmp     eax,dword ptr [rsp+40h]
+00007ffa`dea70ee1 7342            jae     00007ffa`dea70f25
+00007ffa`dea70ee3 488d4c2438      lea     rcx,[rsp+38h]
+00007ffa`dea70ee8 488b09          mov     rcx,qword ptr [rcx]
+00007ffa`dea70eeb 4863c0          movsxd  rax,eax
+00007ffa`dea70eee 0fb60401        movzx   eax,byte ptr [rcx+rax]
+00007ffa`dea70ef2 8b4c2448        mov     ecx,dword ptr [rsp+48h]
+00007ffa`dea70ef6 ffc1            inc     ecx
+00007ffa`dea70ef8 894c2448        mov     dword ptr [rsp+48h],ecx
+00007ffa`dea70efc 8b4c2448        mov     ecx,dword ptr [rsp+48h]
+00007ffa`dea70f00 3b4c2440        cmp     ecx,dword ptr [rsp+40h]
+00007ffa`dea70f04 7c05            jl      00007ffa`dea70f0b
+00007ffa`dea70f06 c644243001      mov     byte ptr [rsp+30h],1
+00007ffa`dea70f0b 0fb6c0          movzx   eax,al
+
+D:\temp\a8\Program.cs @ 59:
+00007ffa`dea70f0e 807c243000      cmp     byte ptr [rsp+30h],0
+00007ffa`dea70f13 74c4            je      00007ffa`dea70ed9
+
+D:\temp\a8\Program.cs @ 60:
+00007ffa`dea70f15 4883c450        add     rsp,50h
+00007ffa`dea70f19 5f              pop     rdi
+00007ffa`dea70f1a c3              ret
+00007ffa`dea70f1b b903000000      mov     ecx,3
+*** ERROR: Module load completed but symbols could not be loaded for C:\Users\pakrym\AppData\Local\Microsoft\dotnet\shared\Microsoft.NETCore.App\2.0.0-beta-001651-00\System.Private.CoreLib.ni.dll
+00007ffa`dea70f20 e89b73fc5d      call    System_Private_CoreLib_ni+0x5c82c0 (00007ffb`3ca382c0) (System.ThrowHelper.ThrowArgumentNullException(System.ExceptionArgument), mdToken: 00000000060002a6)
+
+D:\temp\a8\Program.cs @ 53:
+00007ffa`dea70f25 e80670fc5d      call    System_Private_CoreLib_ni+0x5c7f30 (00007ffb`3ca37f30) (System.ThrowHelper.ThrowIndexOutOfRangeException(), mdToken: 0000000006000294)
+00007ffa`dea70f2a cc              int     3
+
+
+***********************************************************************************************************************************************************
+
+0:000> !U 00007ffade9164a8
+Normal JIT generated code
+a8.Program.For()
+Begin 00007ffadea72340, size 58
+
+D:\temp\a8\Program.cs @ 41:
+00007ffa`dea72340 4883ec28        sub     rsp,28h
+00007ffa`dea72344 48b8a8277eaca6010000 mov rax,1A6AC7E27A8h
+00007ffa`dea7234e 488b00          mov     rax,qword ptr [rax]
+00007ffa`dea72351 4885c0          test    rax,rax
+00007ffa`dea72354 7432            je      00007ffa`dea72388
+00007ffa`dea72356 488d4810        lea     rcx,[rax+10h]
+00007ffa`dea7235a 48894c2420      mov     qword ptr [rsp+20h],rcx
+00007ffa`dea7235f 8b4008          mov     eax,dword ptr [rax+8]
+
+D:\temp\a8\Program.cs @ 42:
+00007ffa`dea72362 33c9            xor     ecx,ecx
+
+D:\temp\a8\Program.cs @ 43:
+00007ffa`dea72364 33d2            xor     edx,edx
+00007ffa`dea72366 85c0            test    eax,eax
+00007ffa`dea72368 7e17            jle     00007ffa`dea72381
+
+D:\temp\a8\Program.cs @ 45:
+00007ffa`dea7236a 3bd0            cmp     edx,eax
+00007ffa`dea7236c 7324            jae     00007ffa`dea72392
+00007ffa`dea7236e 488b4c2420      mov     rcx,qword ptr [rsp+20h]
+00007ffa`dea72373 4c63c2          movsxd  r8,edx
+00007ffa`dea72376 420fb60c01      movzx   ecx,byte ptr [rcx+r8]
+
+D:\temp\a8\Program.cs @ 43:
+00007ffa`dea7237b ffc2            inc     edx
+00007ffa`dea7237d 3bd0            cmp     edx,eax
+00007ffa`dea7237f 7ce9            jl      00007ffa`dea7236a
+
+D:\temp\a8\Program.cs @ 47:
+00007ffa`dea72381 8bc1            mov     eax,ecx
+00007ffa`dea72383 4883c428        add     rsp,28h
+00007ffa`dea72387 c3              ret
+
+D:\temp\a8\Program.cs @ 41:
+00007ffa`dea72388 b903000000      mov     ecx,3
+00007ffa`dea7238d e82e5ffc5d      call    System_Private_CoreLib_ni+0x5c82c0 (00007ffb`3ca382c0) (System.ThrowHelper.ThrowArgumentNullException(System.ExceptionArgument), mdToken: 00000000060002a6)
+00007ffa`dea72392 e8995bfc5d      call    System_Private_CoreLib_ni+0x5c7f30 (00007ffb`3ca37f30) (System.ThrowHelper.ThrowIndexOutOfRangeException(), mdToken: 0000000006000294)
+00007ffa`dea72397 cc              int     3
